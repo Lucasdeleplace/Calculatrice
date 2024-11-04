@@ -4,21 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculette</title>
-    <script src="script.js" ></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <h1>Calculette</h1>
+    <div id="theme-toggle" onclick="toggleTheme()">
+        <div class="toggle-bubble"></div>
+    </div>
     <form>
-        <input type="number" id="num" name="num" placeholder="Nombre">
-        <section id="btn">
-            <button type="button" onclick="calculate('plus')">+</button>
-            <button type="button" onclick="calculate('moins')">-</button>
-            <button type="button" onclick="calculate('fois')">*</button>
-            <button type="button" onclick="calculate('divise')">/</button>
-            <button type="button" onclick="calculate('egal')">=</button>
-            <button type="button" onclick="calculate('reset')">Reset</button>
-        </section>
+        <h2 id="affichage"></h2>
         <h2 id="result"></h2>
+        <div id="container">
+            <section id="chiffres">
+                <button type="button" onclick="appendNumber(1)">1</button>
+                <button type="button" onclick="appendNumber(2)">2</button>
+                <button type="button" onclick="appendNumber(3)">3</button>
+                <button type="button" onclick="appendNumber(4)">4</button>
+                <button type="button" onclick="appendNumber(5)">5</button>
+                <button type="button" onclick="appendNumber(6)">6</button>
+                <button type="button" onclick="appendNumber(7)">7</button>
+                <button type="button" onclick="appendNumber(8)">8</button>
+                <button type="button" onclick="appendNumber(9)">9</button>
+                <button type="button" onclick="appendNumber(0)" id="zero">0</button>
+            </section>
+            <section id="operateurs">
+                <button type="button" onclick="calculate('plus')">+</button>
+                <button type="button" onclick="calculate('moins')">-</button>
+                <button type="button" onclick="calculate('fois')">*</button>
+                <button type="button" onclick="calculate('divise')">/</button>
+                <button type="button" onclick="calculate('egal')">=</button>
+                <button type="button" onclick="calculate('reset')">Reset</button>
+            </section>
+        </div>
     </form>
 </body>
 </html>

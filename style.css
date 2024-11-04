@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #000;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+    color: inherit;
+}
+
+form {
+    padding: 20px;
+    width: 320px;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    border-radius: 8px;
+}
+
+body.dark-mode form {
+    background: #444;
+}
+
+form::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+    border-radius: 8px;
+    z-index: -1;
+}
+
+#container {
+    display: flex;
+}
+
+#chiffres {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    flex: 3;
+}
+
+#operateurs {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    flex: 1;
+    margin-left: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+body.dark-mode button {
+    background-color: #0056b3;
+}
+
+body.dark-mode button:hover {
+    background-color: #003f7f;
+}
+
+#zero {
+    grid-column: 2 / 3;
+}
+
+#affichage, #result {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    color: inherit;
+    min-height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+body.dark-mode #affichage, body.dark-mode #result {
+    background-color: #555;
+    border: 1px solid #888;
+}
+
+#theme-toggle {
+    width: 60px;
+    height: 30px;
+    background-color: #0056b3;
+    border-radius: 15px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#theme-toggle .toggle-bubble {
+    width: 22px;
+    height: 22px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: left 0.3s;
+}
+
+body.dark-mode #theme-toggle {
+    background-color: #666;
+}
+
+body.dark-mode #theme-toggle .toggle-bubble {
+    left: 34px;
+}
